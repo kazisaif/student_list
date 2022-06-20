@@ -1,0 +1,78 @@
+{%include 'heading.html'%}
+{%load static%}
+<!doctype html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{%static 'css/style.css'%}">
+
+</head>
+
+<body>
+        <form method="POST" action="/add_student" enctype="multipart/form-data">
+
+
+                {%csrf_token%}
+
+                <table border="1" class="table table-striped">
+                        <tr>
+                                <td colspan="2" style="text-align: center;">
+                                        <h3>Add New Student</h3>
+                                </td>
+                        </tr>
+                        <tr>
+                                <td align="right" style="padding-left: 220px;">
+                                        <h5>Student ID:</h5>
+                                </td>
+                                <td><input type="text" name="student_id" placeholder="Student ID" required></td>
+                        </tr>
+                        <tr>
+                                <td align="right">
+                                        <h5>Student Name:</h5>
+                                </td>
+                                <td><input type="text" name="student_name" placeholder="Student Name" required></td>
+                        </tr>
+                        <tr>
+                                <td align="right">
+                                        <h5>Student Department:</h5>
+                                </td>
+                                <td><input type="text" name="student_dept" placeholder="Student Department" required>
+                                </td>
+                        </tr>
+                        <tr>
+                                <td align="right">
+                                        <h5>Student Email:</h5>
+                                </td>
+                                <td><input type="email" name="student_email" placeholder="Student Email" required></td>
+                        </tr>
+                        <tr>
+                                <td align="right">
+                                        <h5>Student Mobile:</h5>
+                                </td>
+                                <td><input type="number" name="student_mobile" placeholder="Student Mobile Number" /></td>
+                        </tr>
+                        <tr>
+                                <td align="right">
+                                        <h5>Student Address:</h5>
+                                </td>
+                                <td><textarea name="student_address" placeholder="Student Address"></textarea></td>
+                        </tr>
+
+
+                        <tr>
+                                <td align="right"></td>
+
+                                <td><input type="submit" value="Save" class="btn btn-primary">
+                                        <input type="reset" value="Clear" class="btn btn-secondary">
+                                </td>
+                        </tr>
+                </table>
+        </form>
+
+
+</body>
+
+</html>
